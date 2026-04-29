@@ -41,9 +41,23 @@ h1 {
   margin: 0;
   color: var(--ink);
   max-width: 720px;
-  font-size: clamp(54px, 7.5vw, 116px);
-  line-height: 0.9;
+  font-size: clamp(56px, 8.5vw, 128px);
+  line-height: 0.86;
   letter-spacing: 0;
+}
+
+h1 span,
+h1 strong {
+  display: block;
+}
+
+h1 span {
+  font-weight: 620;
+}
+
+h1 strong {
+  color: var(--accent);
+  font-weight: 860;
 }
 
 .lede {

@@ -110,11 +110,14 @@ function App() {
           <img className="brand-logo" src={vollibLogo} alt="VolLib" />
           <div className="eyebrow">
             <Zap size={16} aria-hidden="true" />
-            Browser-local TypeScript benchmark
+            No server. No local install.
           </div>
-          <h1>Implied volatility at browser speed</h1>
+          <h1>
+            <span>VolLib runs</span>
+            <strong>on your browser.</strong>
+          </h1>
           <p className="lede">
-            One second of Black-Scholes implied-volatility inversion, running in your browser from the published NPM package.
+            Press start. For one second, this page solves Black-Scholes implied volatility as fast as this browser can go.
           </p>
           <button className="start-button" type="button" onClick={startBenchmark} disabled={runState === 'running'}>
             {runState === 'running' ? <Activity size={20} aria-hidden="true" /> : <Gauge size={20} aria-hidden="true" />}
@@ -126,7 +129,7 @@ function App() {
         <div className="visual-panel" aria-label="Benchmark visualization">
           <div className="speed-readout">
             <span>{resultHeadline}</span>
-            <small>{result ? 'implied volatility calculations per second' : 'timed benchmark window'}</small>
+            <small>{result ? 'implied volatility calculations, just now, on this browser' : 'one-second browser benchmark'}</small>
           </div>
 
           <div className="progress-track" aria-label="Benchmark progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(progress * 100)} role="progressbar">
@@ -154,13 +157,13 @@ function App() {
         <div>
           <h2>What runs</h2>
           <p>
-            A Web Worker cycles through calls and puts across strikes, maturities, rates, and volatilities, then repeatedly solves implied volatility from price for exactly one measured second.
+            A Web Worker cycles through calls and puts, then repeatedly solves implied volatility from price for exactly one measured second.
           </p>
         </div>
         <div>
           <h2>What it proves</h2>
           <p>
-            The page imports <code>@vollib/vollib</code> from NPM, so a successful deployment also proves the published dependency chain works in a blank browser project.
+            The page imports <code>@vollib/vollib</code> from NPM and runs the calculation inside the browser you are using now.
           </p>
         </div>
         <div>
