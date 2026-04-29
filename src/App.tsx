@@ -128,9 +128,9 @@ function App() {
           </p>
         </div>
         <div>
-          <h2>What it proves</h2>
+          <h2>What it shows</h2>
           <p>
-            The page imports <code>@vollib/vollib</code> from NPM and runs the calculation inside the browser you are using now.
+            The page imports <code>@vollib/vollib</code> from NPM and runs inside the browser you are using now.
           </p>
         </div>
         <div>
