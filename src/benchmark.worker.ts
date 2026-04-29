@@ -83,12 +83,14 @@ self.onmessage = (event: MessageEvent<BenchmarkRequest>) => {
 
   const elapsedMs = performance.now() - startedAt
 
+  if (!Number.isFinite(checksum)) {
+    throw new Error('Benchmark produced a non-finite result.')
+  }
+
   self.postMessage({
     count,
     elapsedMs,
     perSecond: count / (elapsedMs / 1000),
-    checksum,
-    cases: benchmarkCases.length,
     engine: 'Peter Jaeckel LetsBeRational via @vollib/vollib',
   })
 }

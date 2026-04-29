@@ -8,8 +8,6 @@ type BenchmarkResult = {
   count: number
   elapsedMs: number
   perSecond: number
-  checksum: number
-  cases: number
   engine: string
 }
 
@@ -92,15 +90,11 @@ function App() {
   const meterRows = result
     ? [
         { label: 'Implied volatilities', value: numberFormatter.format(result.count) },
-        { label: 'Measured elapsed', value: `${decimalFormatter.format(result.elapsedMs)} ms` },
-        { label: 'Option cases cycled', value: numberFormatter.format(result.cases) },
-        { label: 'Numerical checksum', value: decimalFormatter.format(result.checksum) },
+        { label: 'Elapsed', value: `${decimalFormatter.format(result.elapsedMs)} ms` },
       ]
     : [
         { label: 'Implied volatilities', value: 'Waiting' },
-        { label: 'Measured elapsed', value: '1000 ms' },
-        { label: 'Option cases cycled', value: '160' },
-        { label: 'Numerical checksum', value: 'Ready' },
+        { label: 'Elapsed', value: '1000 ms' },
       ]
 
   return (
