@@ -108,7 +108,7 @@ function App() {
         <div className="visual-panel" aria-label="Benchmark visualization">
           <div className="speed-readout" aria-live="polite">
             <span>{resultHeadline}</span>
-            <small>{result ? 'implied volatilities per second, just now, on this browser' : 'five-second browser benchmark'}</small>
+            <small>{result ? 'implied volatilities per second, just now, on this browser' : 'crunching'}</small>
           </div>
 
           <div className="progress-track" aria-label="Benchmark progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(progress * 100)} role="progressbar">
