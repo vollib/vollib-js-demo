@@ -96,8 +96,7 @@ function App() {
         <div className="hero-copy">
           <img className="brand-logo" src={vollibLogo} alt="VolLib" />
           <h1>
-            <strong>runs</strong>
-            <span>on your browser.</span>
+            <strong>in your browser</strong>
           </h1>
           <button className="start-button" type="button" onClick={startBenchmark} disabled={runState === 'running'}>
             {runState === 'running' ? <Activity size={20} aria-hidden="true" /> : <Gauge size={20} aria-hidden="true" />}
