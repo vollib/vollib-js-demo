@@ -133,7 +133,7 @@ function App() {
         <div>
           <h2>What runs</h2>
           <p>
-            A Web Worker cycles through a long list of put and call prices, computing the implied volatility for each over five seconds.
+            This web page cycles over a list of option prices, computing the implied volatility for each.
           </p>
         </div>
         <div>
