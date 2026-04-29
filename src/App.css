@@ -154,19 +154,35 @@ h1 strong {
 }
 
 .progress-track {
-  height: 16px;
+  height: 22px;
   overflow: hidden;
   border-radius: 999px;
-  background: rgba(238, 247, 248, 0.12);
+  border: 1px solid rgba(92, 168, 73, 0.32);
+  background: rgba(5, 18, 24, 0.72);
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.32);
 }
 
 .progress-fill {
+  position: relative;
   width: 100%;
   height: 100%;
   transform-origin: left center;
   border-radius: inherit;
   background: var(--logo-green);
+  box-shadow: 0 0 28px rgba(92, 168, 73, 0.34);
   transition: transform 90ms linear;
+}
+
+.progress-fill::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  right: 0;
+  bottom: -7px;
+  width: 4px;
+  border-radius: 999px;
+  background: #e2ffdd;
+  box-shadow: 0 0 18px rgba(226, 255, 221, 0.84);
 }
 
 .surface {

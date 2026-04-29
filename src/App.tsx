@@ -124,7 +124,7 @@ function App() {
         <div>
           <h2>What runs</h2>
           <p>
-            A Web Worker cycles through Black-Scholes calls and puts, then repeatedly solves implied volatility from price for exactly one measured second.
+            A Web Worker cycles through a long list of put and call prices, computing the implied volatility for each over one second.
           </p>
         </div>
         <div>
