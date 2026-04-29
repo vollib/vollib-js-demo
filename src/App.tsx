@@ -1,7 +1,7 @@
 import { Activity, AlertTriangle, Gauge } from 'lucide-react'
 import type { CSSProperties } from 'react'
 import { useEffect, useMemo, useRef, useState } from 'react'
-import vollibLogo from './assets/vollib-logo.svg'
+import vollibLogo from './assets/vollib-logo-cream.svg'
 import './App.css'
 
 type BenchmarkResult = {
@@ -88,9 +88,7 @@ function App() {
     <main className="shell">
       <section className="hero" aria-label="VolLib benchmark">
         <div className="hero-copy">
-          <div className="logo-band">
-            <img className="brand-logo" src={vollibLogo} alt="VolLib" />
-          </div>
+          <img className="brand-logo" src={vollibLogo} alt="VolLib" />
           <h1>
             <strong>runs</strong>
             <span>on your browser.</span>

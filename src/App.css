@@ -16,21 +16,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 26px;
-  padding: 0 clamp(32px, 6vw, 92px) clamp(32px, 5vw, 78px);
-}
-
-.logo-band {
-  display: flex;
-  align-items: center;
-  min-height: clamp(118px, 16vw, 190px);
-  margin: 0 calc(clamp(32px, 6vw, 92px) * -1) 18px;
-  padding: 24px clamp(32px, 6vw, 92px);
-  background: var(--vollib-mint);
+  gap: 34px;
+  padding: clamp(32px, 6vw, 92px);
 }
 
 .brand-logo {
-  width: min(330px, 72vw);
+  width: min(260px, 64vw);
   height: auto;
   display: block;
 }
@@ -146,9 +137,10 @@ h1 strong {
 
 .speed-readout span {
   color: #ffffff;
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: clamp(48px, 8vw, 112px);
   font-weight: 800;
+  font-variant-numeric: tabular-nums;
   line-height: 0.95;
   letter-spacing: 0;
   overflow-wrap: anywhere;
