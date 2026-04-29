@@ -19,10 +19,6 @@ const numberFormatter = new Intl.NumberFormat(undefined, {
   maximumFractionDigits: 0,
 })
 
-const decimalFormatter = new Intl.NumberFormat(undefined, {
-  maximumFractionDigits: 3,
-})
-
 function App() {
   const [runState, setRunState] = useState<RunState>('idle')
   const [progress, setProgress] = useState(0)
@@ -87,16 +83,6 @@ function App() {
     worker.postMessage({ durationMs: DURATION_MS })
   }
 
-  const meterRows = result
-    ? [
-        { label: 'Implied volatilities', value: numberFormatter.format(result.count) },
-        { label: 'Elapsed', value: `${decimalFormatter.format(result.elapsedMs)} ms` },
-      ]
-    : [
-        { label: 'Implied volatilities', value: 'Waiting' },
-        { label: 'Elapsed', value: '1000 ms' },
-      ]
-
   return (
     <main className="shell">
       <section className="hero" aria-label="VolLib benchmark">
@@ -132,15 +118,6 @@ function App() {
             ))}
           </div>
         </div>
-      </section>
-
-      <section className="metrics" aria-label="Benchmark results">
-        {meterRows.map((row) => (
-          <div className="metric" key={row.label}>
-            <span>{row.label}</span>
-            <strong>{row.value}</strong>
-          </div>
-        ))}
       </section>
 
       <section className="details" aria-label="Benchmark details">

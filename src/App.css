@@ -1,7 +1,7 @@
 .shell {
   min-height: 100svh;
   display: grid;
-  grid-template-rows: 1fr auto auto;
+  grid-template-rows: 1fr auto;
 }
 
 .hero {
@@ -44,7 +44,7 @@ h1 span {
 }
 
 h1 strong {
-  color: var(--accent);
+  color: var(--logo-green);
   font-weight: 860;
 }
 
@@ -72,23 +72,23 @@ h1 strong {
   padding: 0 24px;
   border-radius: 8px;
   color: #f9fbff;
-  background: #111827;
-  box-shadow: 0 18px 34px rgba(17, 24, 39, 0.18);
+  background: var(--logo-blue);
+  box-shadow: 0 18px 34px rgba(10, 113, 154, 0.2);
   font-weight: 760;
 }
 
 .start-button:hover {
-  background: #0f766e;
+  background: #085f82;
 }
 
 .start-button:disabled {
   cursor: wait;
-  background: #44515f;
+  background: #547b8c;
 }
 
 .start-button:focus-visible,
 .icon-button:focus-visible {
-  outline: 3px solid rgba(15, 118, 110, 0.35);
+  outline: 3px solid rgba(92, 168, 73, 0.38);
   outline-offset: 3px;
 }
 
@@ -105,9 +105,9 @@ h1 strong {
   gap: 30px;
   padding: clamp(28px, 5vw, 72px);
   background:
-    linear-gradient(90deg, rgba(17, 24, 39, 0.06) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(17, 24, 39, 0.06) 1px, transparent 1px),
-    #f5f7fb;
+    linear-gradient(90deg, rgba(10, 113, 154, 0.07) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(10, 113, 154, 0.07) 1px, transparent 1px),
+    #f6fafb;
   background-size: 38px 38px;
 }
 
@@ -116,8 +116,8 @@ h1 strong {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(130deg, rgba(15, 118, 110, 0.18), transparent 38%),
-    linear-gradient(315deg, rgba(234, 88, 12, 0.13), transparent 42%);
+    linear-gradient(130deg, rgba(92, 168, 73, 0.14), transparent 42%),
+    linear-gradient(315deg, rgba(10, 113, 154, 0.1), transparent 46%);
   pointer-events: none;
 }
 
@@ -161,7 +161,7 @@ h1 strong {
   height: 100%;
   transform-origin: left center;
   border-radius: inherit;
-  background: linear-gradient(90deg, #0f766e, #2563eb, #ea580c);
+  background: var(--logo-green);
   transition: transform 90ms linear;
 }
 
@@ -177,8 +177,8 @@ h1 strong {
   min-height: 20px;
   height: calc(26px + (var(--cell) % 12) * 13px);
   border-radius: 5px 5px 2px 2px;
-  background: color-mix(in srgb, #0f766e calc(35% + (var(--cell) % 7) * 7%), #f59e0b);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.34), 0 10px 22px rgba(17, 24, 39, 0.11);
+  background: color-mix(in srgb, var(--logo-blue) calc(42% + (var(--cell) % 7) * 6%), var(--logo-green));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.34), 0 10px 22px rgba(10, 113, 154, 0.12);
   transform-origin: bottom center;
 }
 
@@ -188,42 +188,7 @@ h1 strong {
 }
 
 .surface.done span {
-  background: color-mix(in srgb, #2563eb calc(42% + (var(--cell) % 6) * 7%), #14b8a6);
-}
-
-.metrics {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-bottom: 1px solid var(--line);
-}
-
-.metric {
-  display: grid;
-  gap: 8px;
-  min-height: 120px;
-  padding: 28px;
-  border-right: 1px solid var(--line);
-  align-content: center;
-}
-
-.metric:last-child {
-  border-right: 0;
-}
-
-.metric span {
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 730;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-
-.metric strong {
-  color: var(--ink);
-  font-family: var(--mono);
-  font-size: clamp(22px, 2.5vw, 34px);
-  line-height: 1;
-  overflow-wrap: anywhere;
+  background: color-mix(in srgb, var(--logo-green) calc(50% + (var(--cell) % 5) * 8%), var(--logo-blue));
 }
 
 .details {
@@ -256,7 +221,7 @@ h1 strong {
 code {
   font-family: var(--mono);
   color: var(--ink);
-  background: rgba(15, 118, 110, 0.1);
+  background: rgba(92, 168, 73, 0.12);
   border-radius: 5px;
   padding: 2px 6px;
 }
@@ -270,7 +235,7 @@ code {
   margin-left: 12px;
   border-radius: 999px;
   color: #f9fbff;
-  background: #0f766e;
+  background: var(--logo-green);
   vertical-align: middle;
 }
 
@@ -285,7 +250,6 @@ code {
 
 @media (max-width: 900px) {
   .hero,
-  .metrics,
   .details {
     grid-template-columns: 1fr;
   }
@@ -298,7 +262,6 @@ code {
     min-height: 520px;
   }
 
-  .metric,
   .details > div {
     border-right: 0;
     border-bottom: 1px solid var(--line);
@@ -312,7 +275,6 @@ code {
 @media (max-width: 560px) {
   .hero-copy,
   .visual-panel,
-  .metric,
   .details > div {
     padding: 24px;
   }
