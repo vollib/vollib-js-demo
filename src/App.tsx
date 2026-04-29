@@ -33,6 +33,12 @@ function App() {
     return numberFormatter.format(Math.round(result.perSecond))
   }, [result, runState])
 
+  const resultSubtitle = useMemo(() => {
+    if (runState === 'running') return 'crunching'
+    if (!result) return ''
+    return 'implied volatilities per second, just now, on this browser'
+  }, [result, runState])
+
   useEffect(() => {
     return () => {
       workerRef.current?.terminate()
@@ -108,7 +114,7 @@ function App() {
         <div className="visual-panel" aria-label="Benchmark visualization">
           <div className="speed-readout" aria-live="polite">
             <span>{resultHeadline}</span>
-            <small>{result ? 'implied volatilities per second, just now, on this browser' : 'crunching'}</small>
+            {resultSubtitle ? <small>{resultSubtitle}</small> : null}
           </div>
 
           <div className="progress-track" aria-label="Benchmark progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(progress * 100)} role="progressbar">
