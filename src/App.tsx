@@ -89,7 +89,7 @@ function App() {
         <div className="hero-copy">
           <img className="brand-logo" src={vollibLogo} alt="VolLib" />
           <h1>
-            <span>Runs</span>
+            <span>runs</span>
             <strong>on your browser.</strong>
           </h1>
           <p className="lede">
