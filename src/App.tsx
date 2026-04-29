@@ -30,7 +30,7 @@ function App() {
   const resultHeadline = useMemo(() => {
     if (runState === 'running') return '...'
     if (!result) return 'Ready'
-    return `${numberFormatter.format(Math.round(result.perSecond))} /sec`
+    return numberFormatter.format(Math.round(result.perSecond))
   }, [result, runState])
 
   useEffect(() => {
