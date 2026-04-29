@@ -19,6 +19,7 @@ const strikes = [70, 85, 100, 115]
 const maturities = [14 / 365, 0.25, 0.75, 1.5, 3]
 const rates = [-0.005, 0.0, 0.025, 0.06]
 const sigmas = [0.08, 0.16, 0.24, 0.42, 0.78]
+const batchSize = 512
 
 function createCases(): BenchmarkCase[] {
   const cases: BenchmarkCase[] = []
@@ -38,27 +39,43 @@ function createCases(): BenchmarkCase[] {
   return cases
 }
 
+const benchmarkCases = createCases()
+
+function solveImpliedVolatility(optionCase: BenchmarkCase): number {
+  return blackScholesImpliedVolatility(
+    optionCase.price,
+    optionCase.S,
+    optionCase.K,
+    optionCase.t,
+    optionCase.r,
+    optionCase.flag,
+  )
+}
+
+function warmUpEngine(): void {
+  let checksum = 0
+
+  for (let i = 0; i < benchmarkCases.length * 8; i += 1) {
+    checksum += solveImpliedVolatility(benchmarkCases[i % benchmarkCases.length])
+  }
+
+  if (!Number.isFinite(checksum)) {
+    throw new Error('Benchmark warmup produced a non-finite result.')
+  }
+}
+
 self.onmessage = (event: MessageEvent<BenchmarkRequest>) => {
   const durationMs = event.data.durationMs
-  const cases = createCases()
+  warmUpEngine()
+
   const startedAt = performance.now()
   let count = 0
   let checksum = 0
   let index = 0
 
   while (performance.now() - startedAt < durationMs) {
-    for (let batch = 0; batch < 128; batch += 1) {
-      const optionCase = cases[index % cases.length]
-      const iv = blackScholesImpliedVolatility(
-        optionCase.price,
-        optionCase.S,
-        optionCase.K,
-        optionCase.t,
-        optionCase.r,
-        optionCase.flag,
-      )
-
-      checksum += iv
+    for (let batch = 0; batch < batchSize; batch += 1) {
+      checksum += solveImpliedVolatility(benchmarkCases[index % benchmarkCases.length])
       count += 1
       index += 1
     }
@@ -71,7 +88,7 @@ self.onmessage = (event: MessageEvent<BenchmarkRequest>) => {
     elapsedMs,
     perSecond: count / (elapsedMs / 1000),
     checksum,
-    cases: cases.length,
+    cases: benchmarkCases.length,
     engine: 'Peter Jaeckel LetsBeRational via @vollib/vollib',
   })
 }
