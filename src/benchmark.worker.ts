@@ -91,6 +91,6 @@ self.onmessage = (event: MessageEvent<BenchmarkRequest>) => {
     count,
     elapsedMs,
     perSecond: count / (elapsedMs / 1000),
-    engine: 'Peter Jaeckel LetsBeRational via @vollib/vollib',
+    engine: "Peter Jaeckel's LetsBeRational via @vollib/vollib",
   })
 }

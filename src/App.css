@@ -106,10 +106,8 @@ h1 strong {
   gap: 30px;
   padding: clamp(28px, 5vw, 72px);
   background:
-    linear-gradient(90deg, rgba(235, 240, 244, 0.13) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(235, 240, 244, 0.13) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 239, 195, 0.12), transparent 56%),
     var(--logo-blue);
-  background-size: 38px 38px;
 }
 
 .visual-panel::before {
@@ -117,8 +115,8 @@ h1 strong {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(130deg, rgba(91, 169, 74, 0.18), transparent 42%),
-    linear-gradient(315deg, rgba(255, 239, 195, 0.1), transparent 46%);
+    linear-gradient(135deg, rgba(91, 169, 74, 0.24), transparent 46%),
+    linear-gradient(315deg, rgba(255, 239, 195, 0.16), transparent 52%);
   pointer-events: none;
 }
 
@@ -160,7 +158,6 @@ h1 strong {
 }
 
 .progress-fill {
-  position: relative;
   width: 100%;
   height: 100%;
   transform-origin: left center;
@@ -168,18 +165,6 @@ h1 strong {
   background: var(--logo-green);
   box-shadow: none;
   transition: transform 90ms linear;
-}
-
-.progress-fill::after {
-  content: "";
-  position: absolute;
-  top: -9px;
-  right: 0;
-  bottom: -9px;
-  width: 5px;
-  border-radius: 0;
-  background: var(--vollib-cream);
-  box-shadow: 0 0 18px rgba(255, 239, 195, 0.84);
 }
 
 .surface {
