@@ -1,4 +1,4 @@
-import { Activity, Gauge } from 'lucide-react'
+import { Activity, AlertTriangle, Gauge } from 'lucide-react'
 import type { CSSProperties } from 'react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import vollibLogo from './assets/vollib-logo.svg'
@@ -28,9 +28,10 @@ function App() {
   const frameRef = useRef<number | null>(null)
 
   const resultHeadline = useMemo(() => {
-    if (!result) return '1 second'
-    return numberFormatter.format(Math.round(result.perSecond))
-  }, [result])
+    if (runState === 'running') return '...'
+    if (!result) return 'Ready'
+    return `${numberFormatter.format(Math.round(result.perSecond))} /sec`
+  }, [result, runState])
 
   useEffect(() => {
     return () => {
@@ -91,20 +92,25 @@ function App() {
             <img className="brand-logo" src={vollibLogo} alt="VolLib" />
           </div>
           <h1>
-            <span>runs</span>
-            <strong>on your browser.</strong>
+            <strong>runs</strong>
+            <span>on your browser.</span>
           </h1>
           <button className="start-button" type="button" onClick={startBenchmark} disabled={runState === 'running'}>
             {runState === 'running' ? <Activity size={20} aria-hidden="true" /> : <Gauge size={20} aria-hidden="true" />}
             {runState === 'running' ? 'Running' : result ? 'Run again' : 'Start'}
           </button>
-          {error ? <p className="error">{error}</p> : null}
+          {error ? (
+            <p className="error" role="alert">
+              <AlertTriangle size={18} aria-hidden="true" />
+              <span>Could not run benchmark: {error}</span>
+            </p>
+          ) : null}
         </div>
 
         <div className="visual-panel" aria-label="Benchmark visualization">
-          <div className="speed-readout">
+          <div className="speed-readout" aria-live="polite">
             <span>{resultHeadline}</span>
-            <small>{result ? 'implied volatilities, just now, on this browser' : 'one-second browser benchmark'}</small>
+            <small>{result ? 'implied volatilities per second, just now, on this browser' : 'one-second browser benchmark'}</small>
           </div>
 
           <div className="progress-track" aria-label="Benchmark progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(progress * 100)} role="progressbar">

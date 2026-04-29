@@ -50,12 +50,12 @@ h1 strong {
 }
 
 h1 span {
-  font-weight: 620;
+  font-weight: 500;
 }
 
 h1 strong {
   color: var(--vollib-cream);
-  font-weight: 860;
+  font-weight: 800;
 }
 
 .lede {
@@ -81,28 +81,35 @@ h1 strong {
   padding: 0 24px;
   border-radius: 8px;
   color: #f7fbfc;
-  background: var(--logo-green);
+  background: #3a7a2c;
   box-shadow: 0 12px 24px rgba(10, 112, 153, 0.18);
-  font-weight: 760;
+  font-weight: 700;
 }
 
 .start-button:hover {
-  background: #4f963f;
+  background: #326b26;
 }
 
 .start-button:disabled {
   cursor: wait;
-  background: #7ba970;
+  background: #587e50;
 }
 
 .start-button:focus-visible {
-  outline: 3px solid rgba(92, 168, 73, 0.38);
+  outline: 3px solid var(--vollib-cream);
   outline-offset: 3px;
 }
 
 .error {
-  color: #b42318;
-  font-weight: 650;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  color: var(--vollib-cream);
+  background: var(--logo-orange);
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-weight: 600;
 }
 
 .visual-panel {
@@ -141,7 +148,7 @@ h1 strong {
   color: #ffffff;
   font-family: var(--mono);
   font-size: clamp(48px, 8vw, 112px);
-  font-weight: 830;
+  font-weight: 800;
   line-height: 0.95;
   letter-spacing: 0;
   overflow-wrap: anywhere;
@@ -150,7 +157,7 @@ h1 strong {
 .speed-readout small {
   color: var(--vollib-ice);
   font-size: clamp(15px, 1.5vw, 20px);
-  font-weight: 680;
+  font-weight: 600;
 }
 
 .progress-track {
@@ -183,7 +190,7 @@ h1 strong {
 .surface span {
   min-height: 20px;
   height: calc(26px + (var(--cell) % 12) * 13px);
-  border-radius: 5px 5px 2px 2px;
+  border-radius: 4px 4px 0 0;
   background: color-mix(in srgb, var(--logo-blue) calc(42% + (var(--cell) % 7) * 6%), var(--logo-green));
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24), 0 10px 18px rgba(0, 0, 0, 0.13);
   transform-origin: bottom center;
@@ -230,7 +237,7 @@ code {
   font-family: var(--mono);
   color: var(--logo-blue);
   background: rgba(217, 235, 211, 0.8);
-  border-radius: 5px;
+  border-radius: 4px;
   padding: 2px 6px;
 }
 
@@ -240,6 +247,16 @@ code {
   }
   to {
     transform: scaleY(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .surface.running span {
+    animation: none;
+  }
+
+  .progress-fill {
+    transition: none;
   }
 }
 
