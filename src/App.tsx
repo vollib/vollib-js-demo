@@ -87,7 +87,9 @@ function App() {
     <main className="shell">
       <section className="hero" aria-label="VolLib benchmark">
         <div className="hero-copy">
-          <img className="brand-logo" src={vollibLogo} alt="VolLib" />
+          <div className="logo-band">
+            <img className="brand-logo" src={vollibLogo} alt="VolLib" />
+          </div>
           <h1>
             <span>runs</span>
             <strong>on your browser.</strong>

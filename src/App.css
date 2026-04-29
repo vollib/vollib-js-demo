@@ -9,7 +9,7 @@
   grid-template-columns: minmax(320px, 0.9fr) minmax(360px, 1.1fr);
   min-height: 68svh;
   border-bottom: 1px solid var(--line);
-  background: var(--vollib-mint);
+  background: var(--logo-blue);
 }
 
 .hero-copy {
@@ -17,7 +17,16 @@
   flex-direction: column;
   justify-content: center;
   gap: 26px;
-  padding: clamp(32px, 6vw, 92px);
+  padding: 0 clamp(32px, 6vw, 92px) clamp(32px, 5vw, 78px);
+}
+
+.logo-band {
+  display: flex;
+  align-items: center;
+  min-height: clamp(118px, 16vw, 190px);
+  margin: 0 calc(clamp(32px, 6vw, 92px) * -1) 18px;
+  padding: 24px clamp(32px, 6vw, 92px);
+  background: var(--vollib-mint);
 }
 
 .brand-logo {
@@ -28,7 +37,7 @@
 
 h1 {
   margin: 0;
-  color: var(--ink);
+  color: #ffffff;
   max-width: 720px;
   font-size: clamp(56px, 8.5vw, 128px);
   line-height: 0.86;
@@ -45,7 +54,7 @@ h1 span {
 }
 
 h1 strong {
-  color: var(--logo-green);
+  color: var(--vollib-cream);
   font-weight: 860;
 }
 
@@ -103,9 +112,7 @@ h1 strong {
   align-content: end;
   gap: 30px;
   padding: clamp(28px, 5vw, 72px);
-  background:
-    linear-gradient(180deg, rgba(255, 239, 195, 0.12), transparent 56%),
-    var(--logo-blue);
+  background: var(--logo-blue);
 }
 
 .visual-panel::before {
@@ -113,8 +120,8 @@ h1 strong {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(135deg, rgba(91, 169, 74, 0.24), transparent 46%),
-    linear-gradient(315deg, rgba(255, 239, 195, 0.16), transparent 52%);
+    linear-gradient(180deg, rgba(255, 239, 195, 0.1), transparent 58%),
+    linear-gradient(135deg, rgba(91, 169, 74, 0.16), transparent 46%);
   pointer-events: none;
 }
 
