@@ -1,12 +1,15 @@
 :root {
-  --logo-blue: #0a719a;
-  --logo-green: #5ca849;
+  --logo-blue: #0a7099;
+  --logo-green: #5ba94a;
   --logo-orange: #d45129;
-  --ink: #eef7f8;
-  --muted: #adc4ca;
-  --line: rgba(173, 196, 202, 0.18);
-  --paper: #07161c;
-  --panel: #0c2028;
+  --vollib-cream: #ffefc3;
+  --vollib-mint: #d9ebd3;
+  --vollib-ice: #ebf0f4;
+  --ink: #ebf0f4;
+  --muted: #d9ebd3;
+  --line: rgba(217, 235, 211, 0.2);
+  --paper: #061821;
+  --panel: #092433;
   --accent: var(--logo-green);
   --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;

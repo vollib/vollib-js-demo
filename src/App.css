@@ -10,8 +10,8 @@
   min-height: 68svh;
   border-bottom: 1px solid var(--line);
   background:
-    radial-gradient(circle at 14% 18%, rgba(92, 168, 73, 0.12), transparent 32%),
-    linear-gradient(135deg, rgba(10, 113, 154, 0.2), transparent 48%);
+    radial-gradient(circle at 14% 18%, rgba(91, 169, 74, 0.13), transparent 32%),
+    linear-gradient(135deg, rgba(10, 112, 153, 0.24), transparent 48%);
 }
 
 .hero-copy {
@@ -148,17 +148,17 @@ h1 strong {
 }
 
 .speed-readout small {
-  color: var(--muted);
+  color: var(--vollib-mint);
   font-size: clamp(15px, 1.5vw, 20px);
   font-weight: 680;
 }
 
 .progress-track {
-  height: 22px;
+  height: 34px;
   overflow: hidden;
-  border-radius: 999px;
-  border: 1px solid rgba(92, 168, 73, 0.32);
-  background: rgba(5, 18, 24, 0.72);
+  border-radius: 0;
+  border: 1px solid rgba(217, 235, 211, 0.28);
+  background: rgba(5, 18, 24, 0.78);
   box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.32);
 }
 
@@ -167,22 +167,22 @@ h1 strong {
   width: 100%;
   height: 100%;
   transform-origin: left center;
-  border-radius: inherit;
+  border-radius: 0;
   background: var(--logo-green);
-  box-shadow: 0 0 28px rgba(92, 168, 73, 0.34);
+  box-shadow: 0 0 30px rgba(91, 169, 74, 0.42);
   transition: transform 90ms linear;
 }
 
 .progress-fill::after {
   content: "";
   position: absolute;
-  top: -7px;
+  top: -9px;
   right: 0;
-  bottom: -7px;
-  width: 4px;
-  border-radius: 999px;
-  background: #e2ffdd;
-  box-shadow: 0 0 18px rgba(226, 255, 221, 0.84);
+  bottom: -9px;
+  width: 5px;
+  border-radius: 0;
+  background: var(--vollib-cream);
+  box-shadow: 0 0 18px rgba(255, 239, 195, 0.84);
 }
 
 .surface {
