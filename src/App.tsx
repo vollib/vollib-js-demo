@@ -139,7 +139,7 @@ function App() {
         <div>
           <h2>What it shows</h2>
           <p>
-            The page imports <code>@vollib/vollib</code> from NPM and runs inside the browser you are using now.
+            The page imports <code>@vollib/vollib</code> (a TypeScript module) from the internet, and runs inside the browser you are using now.
           </p>
         </div>
         <div>
