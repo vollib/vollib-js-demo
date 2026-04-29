@@ -1,4 +1,4 @@
-import { Activity, Gauge, RotateCcw, Zap } from 'lucide-react'
+import { Activity, Gauge, RotateCcw } from 'lucide-react'
 import type { CSSProperties } from 'react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import vollibLogo from './assets/vollib-logo.svg'
@@ -108,16 +108,12 @@ function App() {
       <section className="hero" aria-label="VolLib benchmark">
         <div className="hero-copy">
           <img className="brand-logo" src={vollibLogo} alt="VolLib" />
-          <div className="eyebrow">
-            <Zap size={16} aria-hidden="true" />
-            No server. No local install.
-          </div>
           <h1>
-            <span>VolLib runs</span>
+            <span>Runs</span>
             <strong>on your browser.</strong>
           </h1>
           <p className="lede">
-            Press start. For one second, this page solves Black-Scholes implied volatility as fast as this browser can go.
+            Press start. For one second, this page solves option implied volatility as fast as this browser can go.
           </p>
           <button className="start-button" type="button" onClick={startBenchmark} disabled={runState === 'running'}>
             {runState === 'running' ? <Activity size={20} aria-hidden="true" /> : <Gauge size={20} aria-hidden="true" />}
@@ -157,7 +153,7 @@ function App() {
         <div>
           <h2>What runs</h2>
           <p>
-            A Web Worker cycles through calls and puts, then repeatedly solves implied volatility from price for exactly one measured second.
+            A Web Worker cycles through Black-Scholes calls and puts, then repeatedly solves implied volatility from price for exactly one measured second.
           </p>
         </div>
         <div>
