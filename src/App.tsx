@@ -13,7 +13,7 @@ type BenchmarkResult = {
 
 type RunState = 'idle' | 'running' | 'done'
 
-const DURATION_MS = 1000
+const DURATION_MS = 5000
 
 const numberFormatter = new Intl.NumberFormat(undefined, {
   maximumFractionDigits: 0,
@@ -108,7 +108,7 @@ function App() {
         <div className="visual-panel" aria-label="Benchmark visualization">
           <div className="speed-readout" aria-live="polite">
             <span>{resultHeadline}</span>
-            <small>{result ? 'implied volatilities per second, just now, on this browser' : 'one-second browser benchmark'}</small>
+            <small>{result ? 'implied volatilities per second, just now, on this browser' : 'five-second browser benchmark'}</small>
           </div>
 
           <div className="progress-track" aria-label="Benchmark progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(progress * 100)} role="progressbar">
@@ -127,7 +127,7 @@ function App() {
         <div>
           <h2>What runs</h2>
           <p>
-            A Web Worker cycles through a long list of put and call prices, computing the implied volatility for each over one second.
+            A Web Worker cycles through a long list of put and call prices, computing the implied volatility for each over five seconds.
           </p>
         </div>
         <div>
