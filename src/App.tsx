@@ -1,6 +1,7 @@
 import { Activity, Gauge, RotateCcw, Zap } from 'lucide-react'
 import type { CSSProperties } from 'react'
 import { useEffect, useMemo, useRef, useState } from 'react'
+import vollibLogo from './assets/vollib-logo.svg'
 import './App.css'
 
 type BenchmarkResult = {
@@ -106,11 +107,12 @@ function App() {
     <main className="shell">
       <section className="hero" aria-label="VolLib benchmark">
         <div className="hero-copy">
+          <img className="brand-logo" src={vollibLogo} alt="VolLib" />
           <div className="eyebrow">
             <Zap size={16} aria-hidden="true" />
             Browser-local TypeScript benchmark
           </div>
-          <h1>VolLib</h1>
+          <h1>Implied volatility at browser speed</h1>
           <p className="lede">
             One second of Black-Scholes implied-volatility inversion, running in your browser from the published NPM package.
           </p>
