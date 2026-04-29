@@ -136,7 +136,7 @@ function App() {
         <div>
           <h2>Engine</h2>
           <p>
-            {result?.engine ?? 'Peter Jaeckel LetsBeRational via VolLib TypeScript'}
+            {result?.engine ?? "Peter Jaeckel's LetsBeRational via @vollib/vollib"}
             {result ? (
               <button className="icon-button" type="button" onClick={startBenchmark} aria-label="Run benchmark again">
                 <RotateCcw size={18} aria-hidden="true" />
