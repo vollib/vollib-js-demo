@@ -56,8 +56,7 @@ h1 strong {
   line-height: 1.16;
 }
 
-.start-button,
-.icon-button {
+.start-button {
   border: 0;
   cursor: pointer;
   font: inherit;
@@ -87,8 +86,7 @@ h1 strong {
   background: #7ba970;
 }
 
-.start-button:focus-visible,
-.icon-button:focus-visible {
+.start-button:focus-visible {
   outline: 3px solid rgba(92, 168, 73, 0.38);
   outline-offset: 3px;
 }
@@ -227,19 +225,6 @@ code {
   background: rgba(217, 235, 211, 0.8);
   border-radius: 5px;
   padding: 2px 6px;
-}
-
-.icon-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  margin-left: 12px;
-  border-radius: 999px;
-  color: #f7fbfc;
-  background: var(--logo-green);
-  vertical-align: middle;
 }
 
 @keyframes pulse-cell {

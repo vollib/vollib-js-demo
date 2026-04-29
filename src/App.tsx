@@ -1,4 +1,4 @@
-import { Activity, Gauge, RotateCcw } from 'lucide-react'
+import { Activity, Gauge } from 'lucide-react'
 import type { CSSProperties } from 'react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import vollibLogo from './assets/vollib-logo.svg'
@@ -92,9 +92,6 @@ function App() {
             <span>runs</span>
             <strong>on your browser.</strong>
           </h1>
-          <p className="lede">
-            Press start.
-          </p>
           <button className="start-button" type="button" onClick={startBenchmark} disabled={runState === 'running'}>
             {runState === 'running' ? <Activity size={20} aria-hidden="true" /> : <Gauge size={20} aria-hidden="true" />}
             {runState === 'running' ? 'Running' : result ? 'Run again' : 'Start'}
@@ -137,11 +134,6 @@ function App() {
           <h2>Engine</h2>
           <p>
             {result?.engine ?? "Peter Jaeckel's LetsBeRational via @vollib/vollib"}
-            {result ? (
-              <button className="icon-button" type="button" onClick={startBenchmark} aria-label="Run benchmark again">
-                <RotateCcw size={18} aria-hidden="true" />
-              </button>
-            ) : null}
           </p>
         </div>
       </section>
