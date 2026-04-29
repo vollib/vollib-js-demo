@@ -36,7 +36,7 @@ function App() {
   const resultSubtitle = useMemo(() => {
     if (runState === 'running') return 'crunching'
     if (!result) return ''
-    return 'implied volatilities per second, just now, on this browser'
+    return 'implied volatilities per second, just now, in this browser'
   }, [result, runState])
 
   useEffect(() => {
